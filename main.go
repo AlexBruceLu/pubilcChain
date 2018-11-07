@@ -13,6 +13,9 @@ func main() {
 	blockChain.AddBlock("to xiaohong 20 BTC")
 
 	for _, block := range blockChain.Blocks {
+		byte1 := block.Serialize()
+		fmt.Println(byte1)
+		block = blc.Deserialize(byte1)
 		fmt.Printf("Data: %s\n", string(block.Data))
 		fmt.Printf("PrevHash: %x\n", block.PrevHash)
 		fmt.Printf("Hash: %x\n", block.Hash)
